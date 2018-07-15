@@ -1,10 +1,25 @@
-const SimpleDownloadSession = require("./lib/SimpleDownloadSession");
-const Utils = require("./lib/Utils");
+const {DownloadWorker, utils} = require("./index");
 
-const a = new SimpleDownloadSession("http://ipv4.download.thinkbroadband.com/50MB.zip");
-a.on('start', () => console.log('started'))
-a.on('progress', (progress) => {
-    const speed = Utils.dynamicSpeedUnitDisplay(progress.bytesPerSecond);
-    console.log(`${progress.percent}% - ${speed}`)
+// Multi connections
+// const worker = new DownloadWorker("http://ipv4.download.thinkbroadband.com/50MB.zip", "50.file");
+// worker.on('ready', () => {
+//     worker.on('start', () => console.log('started'))
+//     worker.on('progress', (progress) => {
+//         const speed = utils.dynamicSpeedUnitDisplay(progress.bytesPerSecond);
+//         console.log(`${progress.percent}% - ${speed}`)
+//     });
+//     worker.start();
+// });
+
+// Single connection
+const worker = new DownloadWorker("http://ipv4.download.thinkbroadband.com/50MB.zip", "50.single", {
+    forceSingleConnection: true
 });
-a.start();
+worker.on('ready', () => {
+    worker.on('start', () => console.log('started'))
+    worker.on('progress', (progress) => {
+        const speed = utils.dynamicSpeedUnitDisplay(progress.bytesPerSecond);
+        console.log(`${progress.percent}% - ${speed}`)
+    });
+    worker.start();
+});
