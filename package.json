@@ -19,6 +19,7 @@
   "author": "Minh Nhut",
   "license": "MIT",
   "dependencies": {
+    "barely-functional": "^2.0.0",
     "ramda": "^0.25.0"
   }
 }
