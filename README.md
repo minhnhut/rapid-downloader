@@ -1,7 +1,7 @@
 # rapid-downloader
 Ez to use accelerated downloader for Node.js enviroment. Greatly increase download speed by taking adavantage of node's non-io-blocking, divide the job into multiple network connections.
 
-In hungry? There is example in the end. Skip bellow. Go to last section.
+In a hurry? There is example in the end. Skip bellow. Go to last section.
 
 ## What is inside the box
 
