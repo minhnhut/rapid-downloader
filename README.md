@@ -1,6 +1,8 @@
 # rapid-downloader
 Ez to use accelerated downloader for Node.js enviroment. Greatly increase download speed by taking adavantage of node's non-io-blocking, divide the job into multiple network connections.
 
+[![NPM](https://nodei.co/npm/rapid-downloader.png?compact=true)](https://nodei.co/npm/rapid-downloader/)
+
 In a hurry? There is example in the end. Skip bellow. Go to last section.
 
 ## What is inside the box
