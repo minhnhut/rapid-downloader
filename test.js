@@ -2,8 +2,12 @@ const {DownloadWorker, utils} = require("./index");
 
 // Multi connections
 const worker = new DownloadWorker("http://speedtest.tokyo2.linode.com/100MB-tokyo2.bin", "100MB-tokyo2.zip", {
-    maxConnections: 8
+    maxConnections: 8,
+    forceSingleConnection: true
 });
+worker.on('error', e => {
+    console.log(e);
+})
 worker.on('ready', () => {
     worker.on('start', () => console.log('started'))
     worker.on('progress', (progress) => {
@@ -14,7 +18,12 @@ worker.on('ready', () => {
     worker.on('end', () => console.log('Download is done'));
     worker.start();
 });
-
+// setTimeout(() => {
+//     worker.stop();
+// }, 5000);
+// setTimeout(() => {
+//     worker.resume();
+// }, 8000);
 // Single connection
 // const worker = new DownloadWorker("http://speedtest.tokyo2.linode.com/100MB-tokyo2.bin", "100MB.zip", {
 //     forceSingleConnection: true
