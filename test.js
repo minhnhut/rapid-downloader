@@ -2,8 +2,7 @@ const {DownloadWorker, utils} = require("./index");
 
 // Multi connections
 const worker = new DownloadWorker("http://speedtest.tokyo2.linode.com/100MB-tokyo2.bin", "100MB-tokyo2.zip", {
-    maxConnections: 8,
-    forceSingleConnection: true
+    maxConnections: 8
 });
 worker.on('error', e => {
     console.log(e);
