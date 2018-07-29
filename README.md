@@ -12,7 +12,6 @@ In a hurry? There is example in the end. Skip bellow. Go to last section.
 
 P/s: The most useful one inside utils is **utils.dynamicSpeedUnitDisplay(progress.bytesPerSecond, 2)**
 That function is for making human-readable download speed string from raw progress result of DownloadWorker. For more details, see example bellow.
-The most useful one is
 
 ## What happen inside DownloadWorker
 
