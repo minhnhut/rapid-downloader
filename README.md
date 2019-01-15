@@ -60,7 +60,7 @@ const options = {
 In below example, Linode's server support Ranges request, so DownloadWorker will go with multiple connections.
 
 ```javascript
-const {DownloadWorker} = require("./index");
+const {DownloadWorker} = require("rapid-downloader");
 
 const worker = new DownloadWorker("http://speedtest.tokyo2.linode.com/100MB-tokyo2.bin", "100MB-tokyo2.zip");
 worker.on('ready', () => {
@@ -78,7 +78,7 @@ worker.on('ready', () => {
 ### Specify number of desired connections, display human-readable download speed
 
 ```javascript
-const {DownloadWorker, utils} = require("./index");
+const {DownloadWorker, utils} = require("rapid-downloader");
 
 // Multi connections
 const worker = new DownloadWorker("http://speedtest.tokyo2.linode.com/100MB-tokyo2.bin", "100MB-tokyo2.zip", {
@@ -100,7 +100,7 @@ worker.on('ready', () => {
 ### Force DownloadWorker to download by using single connection
 
 ```javascript
-const {DownloadWorker, utils} = require("./index");
+const {DownloadWorker, utils} = require("rapid-downloader");
 
 const worker = new DownloadWorker("http://speedtest.tokyo2.linode.com/100MB-tokyo2.bin", "100MB.zip", {
     forceSingleConnection: true
