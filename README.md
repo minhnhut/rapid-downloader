@@ -13,6 +13,10 @@ In a hurry? There is example in the end. Skip bellow. Go to last section.
 P/s: The most useful one inside utils is **utils.dynamicSpeedUnitDisplay(progress.bytesPerSecond, 2)**
 That function is for making human-readable download speed string from raw progress result of DownloadWorker. For more details, see example bellow.
 
+## Want to use rapid-downloader in terminal?
+
+Try out: https://github.com/minhnhut/rapid-downloader-cli
+
 ## What happen inside DownloadWorker
 
 DownloadWorker a.k.a worker, will first try to make a HEAD request. To determine if source server is supporting [Range requests](https://developer.mozilla.org/en-US/docs/Web/HTTP/Range_requests). After this point, there will be two cases:
